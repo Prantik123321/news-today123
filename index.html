@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>নিউজ সাইট</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📰 আমাদের সংবাদ</h1>
+    <div class="top-bar">
+      <input type="text" id="searchBox" placeholder="🔍 সার্চ করুন..." />
+      <button onclick="toggleTheme()">🌙</button>
+      <a href="admin/login.html" id="adminBtn">🔐 অ্যাডমিন</a>
+      <button onclick="logout()" id="logoutBtn" style="display:none;">🚪 লগআউট</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="posts"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

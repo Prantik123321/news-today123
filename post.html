@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>বিস্তারিত</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main style="max-width: 800px; margin: 40px auto;">
+    <div id="post"></div>
+    <a href="index.html">🔙 ফিরে যান</a>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+    if (posts[id]) {
+      const post = posts[id];
+      document.getElementById("post").innerHTML = `
+        <h2>${post.title}</h2>
+        <p><strong>ক্যাটেগরি:</strong> ${post.category}</p>
+        <p>${post.details}</p>
+      `;
+    } else {
+      document.getElementById("post").innerHTML = `<p>❌ পোস্ট পাওয়া যায়নি!</p>`;
+    }
+  </script>
+</body>
+</html>

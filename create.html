@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>নতুন পোস্ট</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main style="max-width: 600px; margin: 50px auto;">
+    <h2>📝 নতুন পোস্ট তৈরি</h2>
+    <form onsubmit="return createPost(event)">
+      <input type="text" id="title" placeholder="শিরোনাম" required /><br><br>
+      <textarea id="details" placeholder="বিস্তারিত লিখুন..." rows="6" required></textarea><br><br>
+      <input type="text" id="category" placeholder="ক্যাটেগরি" required /><br><br>
+      <button type="submit">✅ সাবমিট</button>
+    </form>
+  </main>
+
+  <script>
+    // ✅ admin না হলে redirect
+    if (localStorage.getItem("admin") !== "true") {
+      alert("শুধুমাত্র অ্যাডমিন পোস্ট দিতে পারে!");
+      window.location.href = "index.html";
+    }
+
+    function createPost(e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const details = document.getElementById("details").value;
+      const category = document.getElementById("category").value;
+
+      const posts = JSON.parse(localStorage.getItem("posts")) || [];
+      posts.unshift({ title, details, category });
+      localStorage.setItem("posts", JSON.stringify(posts));
+      alert("পোস্ট সফলভাবে যোগ হয়েছে!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

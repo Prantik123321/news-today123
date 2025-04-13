@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>অ্যাডমিন লগইন</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <main style="max-width: 400px; margin: 50px auto;">
+    <h2>🔐 অ্যাডমিন লগইন</h2>
+    <form onsubmit="return login(event)">
+      <input type="text" id="username" placeholder="ইউজারনেম" required /><br><br>
+      <input type="password" id="password" placeholder="পাসওয়ার্ড" required /><br><br>
+      <button type="submit">লগইন</button>
+    </form>
+  </main>
+
+  <script>
+    function login(e) {
+      e.preventDefault();
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+
+      // 🔑 তোমার ইচ্ছামত ইউজার/পাস পরিবর্তন করতে পারো
+      if (u === "admin" && p === "1234") {
+        localStorage.setItem("admin", "true");
+        alert("লগইন সফল!");
+        window.location.href = "../index.html";
+      } else {
+        alert("ভুল ইউজারনেম বা পাসওয়ার্ড!");
+      }
+    }
+  </script>
+</body>
+</html>

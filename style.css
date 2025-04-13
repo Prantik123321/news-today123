@@ -1,0 +1,96 @@
+/* 🌐 Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+header {
+  background: #008cff;
+  color: white;
+  padding: 15px 20px;
+}
+header h1 {
+  margin: 0;
+}
+.top-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.top-bar input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+.top-bar button, .top-bar a {
+  padding: 8px 12px;
+  border: none;
+  background: #fff;
+  color: #008cff;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+.top-bar button:hover, .top-bar a:hover {
+  background: #dbeeff;
+}
+
+main {
+  padding: 20px;
+}
+.post {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.post h2 {
+  margin-top: 0;
+}
+.post a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #008cff;
+  font-weight: bold;
+}
+.post a:hover {
+  text-decoration: underline;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+body.dark header {
+  background: #1e1e1e;
+  color: #fff;
+}
+body.dark .top-bar input {
+  background: #333;
+  color: #eee;
+}
+body.dark .top-bar button,
+body.dark .top-bar a {
+  background: #333;
+  color: #eee;
+}
+body.dark .top-bar button:hover,
+body.dark .top-bar a:hover {
+  background: #555;
+}
+body.dark .post {
+  background: #1e1e1e;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+body.dark .post a {
+  color: #55aaff;
+}
